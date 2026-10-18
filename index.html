@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fil">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07152f">
+  <meta name="description" content="Monster Chess Arena — original monster auto-battler prototype.">
+  <title>Monster Chess Arena</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div><div class="eyebrow">PROTOTYPE • SEASON 0</div><h1>⚔️ Monster Chess Arena</h1></div>
+    <div class="wallet"><span>🪙</span> <b id="coins">250</b></div>
+  </header>
+  <main>
+    <section class="hero panel">
+      <div><p class="eyebrow">PILIIN ANG IYONG KOPONAN</p><h2>Diskarte ang tunay na lakas.</h2><p class="muted">Bumuo ng squad, ayusin ang puwesto, at labanan ang AI.</p></div>
+      <div class="hero-monster" aria-hidden="true">🐲</div>
+    </section>
+    <section class="panel">
+      <div class="section-head"><h2>Battle Board</h2><span class="pill" id="round">ROUND 1</span></div>
+      <p class="muted small">I-tap ang monster sa ibaba, pagkatapos ay i-tap ang isang bakanteng tile sa iyong side.</p>
+      <div class="board-wrap"><div class="board" id="board" aria-label="battle board"></div></div>
+      <div class="legend"><span>🔵 Ikaw</span><span>🔴 AI</span><span id="selectedLabel">Pumili ng monster</span></div>
+      <div class="actions">
+        <button id="battleBtn" class="primary">⚔️ Simulan ang Laban</button>
+        <button id="resetBtn" class="secondary">↻ Bagong Laro</button>
+      </div>
+      <p id="message" class="message" role="status">Mag-recruit ng monsters at ilagay sila sa asul na bahagi.</p>
+    </section>
+    <section class="panel">
+      <div class="section-head"><h2>Recruit Shop</h2><span class="muted small">Pumili ng unit</span></div>
+      <div id="shop" class="shop"></div>
+    </section>
+    <section class="panel">
+      <div class="section-head"><h2>Premium Corner</h2><span class="pill gold">DEMO LANG</span></div>
+      <p class="muted small">Sa prototype, ang mga button ay demonstrasyon lamang. Walang totoong bayad o pagbili.</p>
+      <div class="premium-grid">
+        <article><div class="item-icon">💎</div><b>Gem Starter Pack</b><p>100 gems</p><button class="buy" data-item="Gem Starter Pack">Subukan</button></article>
+        <article><div class="item-icon">🛡️</div><b>Champion Skin</b><p>Cosmetic lang</p><button class="buy" data-item="Champion Skin">Subukan</button></article>
+        <article><div class="item-icon">🎒</div><b>Extra Loadout</b><p>Karagdagang team preset</p><button class="buy" data-item="Extra Loadout">Subukan</button></article>
+      </div>
+    </section>
+    <section class="panel compact">
+      <h2>Susunod na development</h2>
+      <ul>
+        <li>Orihinal na 3D models at skill effects</li>
+        <li>Save progress at player accounts</li>
+        <li>Server-authoritative online multiplayer</li>
+        <li>Secure payments at verified purchase receipts</li>
+      </ul>
+    </section>
+  </main>
+  <footer>Monster Chess Arena • Unang playable prototype • Walang real-money transactions</footer>
+  <script src="game.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(console.warn));
+    }
+  </script>
+</body>
+</html>
